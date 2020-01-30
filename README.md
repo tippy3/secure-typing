@@ -1,6 +1,41 @@
 # README
 
 
+## テーブル設計
+
+* id
+* created_at
+* updated_at
+
+は自動生成される。
+
+### users (has_many results)
+* t.string :email
+* t.string :name
+* t.boolean :admin
+* t.integer :level
+* t.integer :experience
+* t.integer :swapfont
+* t.datetime :last_login
+* t.string :password_digest
+
+### sentences (belongs_to games)
+* game_id
+* sentence
+
+### games (has_many sentences)
+* title
+* winners
+
+### results (belongs_to users)
+* user_id
+* game_id
+* speed
+
+タイピング部分はinputbox
+
+
+
 
 
 ## 作業ログ

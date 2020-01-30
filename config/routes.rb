@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  # users_controller
+  get '/mypage' => 'users#index'
+
+  # login, logout, signup
+  get 'login' => 'users#login'
+  post 'login' => 'users#login_post'
+  post 'logout' => 'users#logout_post'
+  get 'signup' => 'users#signup'
+  post 'signup' => 'users#signup_post'
+
 end
