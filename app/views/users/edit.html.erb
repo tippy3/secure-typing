@@ -1,0 +1,30 @@
+<h2><i class="fas fa-users-cog"></i> <%= @current_user.name %></h2>
+<p class="text-muted">ユーザー名は変更できません。</p>
+<hr>
+<h3>パスワードの変更</h3>
+<!-- error start -->
+<% if @error_message %>
+  <div class="alert alert-danger" role="alert">
+    <%= @error_message %>
+  </div>
+<% end %>
+<% @current_user.errors.full_messages.each do |message| %>
+  <div class="alert alert-danger" role="alert">
+    <%= message %>
+  </div>
+<% end %>
+<!-- error end -->
+<%= form_tag "/settings",{method: :post, class: "form-inline"} do %>
+  <input name="old_password" type="password" placeholder="現在のパスワード" class="form-control mb-2 mr-sm-2" value="<%= @old_password %>">
+  <input name="new_password" type="password" placeholder="新しいパスワード" class="form-control mb-2 mr-sm-2" value="<%= @new_password %>">
+  <input type="submit" class="form-control btn btn-primary mb-2" value="パスワードを変更する">
+<% end %>
+
+<hr>
+<h3>アカウントの削除</h3>
+<% if @current_user.admin %>
+  <p class="text-muted">管理者アカウントは削除できません。</p>
+<% else %>
+  <p class="text-muted">削除したアカウントの復元はできません。</p>
+  <p><%= link_to "アカウントを削除する", "/settings/destroy", method: :post, class: 'btn btn-outline-danger', data: {confirm: "アカウントを削除します。"} %></p>
+<% end %>

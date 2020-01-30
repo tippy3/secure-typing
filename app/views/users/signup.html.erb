@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h2>サインアップ</h2>
 
 <% @user.errors.full_messages.each do |message| %>
   <div class="alert alert-danger" role="alert">
@@ -19,5 +19,5 @@
     </div>
     <input name="password" type="password" placeholder='[!-~]{6,24}' class="form-control" value="<%= @user.password %>">
   </div>
-  <input type="submit" class="form-control btn btn-primary mb-2" value="Sign up">
+  <input type="submit" class="form-control btn btn-primary mb-2" value="サインアップ">
 <% end %>

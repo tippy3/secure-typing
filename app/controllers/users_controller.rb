@@ -7,6 +7,36 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def edit
+  end
+
+  def edit_post
+    if @current_user.authenticate(params[:old_password])
+      auth_flag = true
+    else
+      auth_flag = false
+      @error_message = "現在のパスワードが間違っています。"
+    end
+    @current_user.password = params[:new_password]
+    if @current_user.valid? && auth_flag
+      @current_user.save
+      redirect_to "/settings", success: "パスワードを変更しました。"
+    else
+      @new_password = params[:new_password]
+      @old_password = params[:old_password]
+      render "users/edit"
+    end
+  end
+
+  def destroy
+    if @current_user.admin
+      redirect_to "/settings", success: "管理者アカウントは削除できません。"
+    else
+      @current_user.destroy
+      redirect_to "/", success: "アカウントは正常に削除されました。"
+    end
+  end
+
   def signup
     @user = User.new
   end

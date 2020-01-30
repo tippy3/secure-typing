@@ -22,11 +22,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <% if @current_user %>
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item<%= ' active' if request.path_info == '/mypage' %>"><%= link_to "My Page", "/mypage", class: "nav-link" %></li>
-                <li class="nav-item<%= ' active' if request.path_info == '/settings' %>"><%= link_to "Account Settings" , "/settings", class: "nav-link" %></li>
-                <% if @current_user.admin %>
-                  <li class="nav-item<%= ' active' if controller_name=='admin' %>"><%= link_to "Admin", "/admin/users", class: "nav-link" %></li>
-                <% end %>
+                <li class="nav-item<%= ' active' if request.path_info == '/mypage' %>"><%= link_to "ホーム", "/mypage", class: "nav-link" %></li>
+                <li class="nav-item<%= ' active' if request.path_info == '/settings' %>"><%= link_to "設定" , "/settings", class: "nav-link" %></li>
             </ul>
             <ul class="navbar-nav">
               <span class="navbar-text mr-2 text-light"><%= @current_user.name %></span>
@@ -34,9 +31,9 @@
             </ul>
           <% else %>
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item<%= ' active' if request.path_info == '/' %>"><%= link_to "HOME", "/", class: "nav-link" %></li>
-              <li class="nav-item<%= ' active' if request.path_info == '/login' %>"><%= link_to "Log in", "/login", class: "nav-link" %></li>
-              <li class="nav-item<%= ' active' if request.path_info == '/signup' %>"><%= link_to "Sign up", "/signup", class: "nav-link" %></li>
+              <li class="nav-item<%= ' active' if request.path_info == '/' %>"><%= link_to "トップ", "/", class: "nav-link" %></li>
+              <li class="nav-item<%= ' active' if request.path_info == '/login' %>"><%= link_to "ログイン", "/login", class: "nav-link" %></li>
+              <li class="nav-item<%= ' active' if request.path_info == '/signup' %>"><%= link_to "サインアップ", "/signup", class: "nav-link" %></li>
             </ul>
           <% end %>
         </div>
