@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
 
+
   # home_controller
   get '/' => 'home#index'
 
+  # game_controller
+  get 'mypage' => 'games#index'
+  get 'games/show' => 'games#show'
+
   # users_controller
-  get 'mypage' => 'users#index'
+  get 'users' => 'users#index'
   get 'settings' => 'users#edit'
   post 'settings' => 'users#edit_post'
   post 'settings/destroy' => 'users#destroy'

@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2020_01_30_104730) do
     t.integer "level", default: 0
     t.integer "experience", default: 0
     t.integer "swapfont", default: 0
-    t.datetime "last_login"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

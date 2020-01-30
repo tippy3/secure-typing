@@ -7,6 +7,8 @@
         <th scope="col">Admin</th>
         <th scope="col">Created</th>
         <th scope="col">Updated</th>
+        <th scope="col">Level</th>
+        <th scope="col">XP</th>
         <th scope="col"></th>
         <th scope="col"></th>
       </tr>
@@ -19,6 +21,8 @@
           <td><%= user.admin if user.admin %></td>
           <td><%= user.created_at.strftime("%Y.%m.%d %H:%M") %></td>
           <td><%= user.updated_at.strftime("%Y.%m.%d %H:%M") if user.created_at != user.updated_at %></td>
+          <td><%= user.level %></td>
+          <td><%= user.experience %></td>
           <td>
             <%= link_to "/admin/users/#{user.id}" do %>
               <i class="fas fa-edit"></i>

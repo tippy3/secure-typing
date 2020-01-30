@@ -49,7 +49,7 @@ class UsersController < ApplicationController
       render "users/signup"
       # 暫定追加ここまで
     else
-      @user = User.new( name: params[:name],password: params[:password], admin: false )
+      @user = User.new( name: params[:name], password: params[:password], admin: false )
       if @user.save
         session[:user_id] = @user.id
         redirect_to "/mypage", success: "Secure-Typingにようこそ！ アカウントは正常に作成されました。"

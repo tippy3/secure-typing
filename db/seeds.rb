@@ -2,3 +2,4 @@
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
 User.create( name: "tippy", admin: true, password: "initialpassword")
+User.create( name: "user1", admin: false, password: "initialpassword")

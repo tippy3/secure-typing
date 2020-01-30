@@ -16,16 +16,19 @@
 * t.integer :level
 * t.integer :experience
 * t.integer :swapfont
-* t.datetime :last_login
 * t.string :password_digest
 
 ### sentences (belongs_to games)
 * game_id
 * sentence
 
-### games (has_many sentences)
+### books (has_many sentences)
 * title
 * winners
+
+### games
+* book_id
+*
 
 ### results (belongs_to users)
 * user_id
