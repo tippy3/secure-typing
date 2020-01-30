@@ -7,21 +7,19 @@ class GamesController < ApplicationController
   end
 
   def index
-    @serial_num = rand(1..3)
+  end
+
+  def play
+    @serial_num = rand(1..100)
     @current_user.font.swapfont = @serial_num
     @current_user.font.save
     @table = eval("TABLE#{@serial_num}")
-    @text = "hungry"
+    @text = "I love hhlab. We love hhlab."
     @new_text = @text.gsub(/[A-Za-z]/, @table )
   end
 
-  def show
-    @serial_num = rand(1..3)
-    @current_user.font.swapfont = @serial_num
-    @current_user.font.save
-    @table = eval("TABLE#{@serial_num}")
-    @text = "hungry"
-    @new_text = @text.gsub(/[A-Za-z]/, @table )
+  def play_post
+
   end
 
 end

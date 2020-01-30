@@ -5,11 +5,12 @@ Rails.application.routes.draw do
   get '/' => 'home#index'
 
   # swapfont_controller
-  get '/myfont' => 'swapfont#show'
+  get '/myfont/:random_num' => 'swapfont#show'
 
   # game_controller
   get 'mypage' => 'games#index'
-  get 'game' => 'games#show'
+  get 'play' => 'games#play'
+  post 'play' => 'games#play_post'
 
   # users_controller
   get 'users' => 'users#index'

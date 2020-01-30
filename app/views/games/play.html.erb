@@ -1,0 +1,19 @@
+<h1>タイピングゲーム</h1>
+
+<p><%= @text %></p>
+<p><%= @serial_num %></p>
+<hr>
+
+<input id="example-input" type="text" value="<%= @new_text %>" readonly>
+<input id="typing-input" type="text" value="" autofocus>
+
+<style>
+@font-face {
+  font-family: 'swapped-font';
+  src: url(<%= "/myfont/#{Time.zone.now.hash}" %>) format('truetype');
+}
+.swapped-font{
+  font-size: 1.5em;
+  font-family: 'swapped-font';
+}
+</style>

@@ -9,7 +9,7 @@
 
 は自動生成される。
 
-### users (has_one font, has_many results )
+### users (has_one font, has_one games )
 * t.string :name
 * t.boolean :admin
 * t.string :password_digest
@@ -18,26 +18,20 @@
 * user_id
 * swapfont
 
-### sentences (belongs_to game)
-* game_id
+### sentences
 * sentence
 
-### books (has_many sentences)
-* title
-* winners
-
-### games
-* book_id
-*
+### games (belongs_to user)
+* user_id
+* start_time
+* sentence_1
+* sentence_2
+* sentence_3
 
 ### results (belongs_to users)
 * user_id
 * game_id
 * speed
-
-タイピング部分はinputbox
-
-
 
 
 

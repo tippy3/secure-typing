@@ -1,2 +1,47 @@
 @import '~bootstrap/scss/bootstrap';
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
+
+@font-face {
+  font-family: 'normal-font';
+  src: url('/Roboto-Regular.ttf') format('truetype');
+}
+.normal-font{
+  font-size: 1.5em;
+  font-family: 'normal-font';
+}
+
+input#example-input{
+  display: block;
+  background: none;
+  // caret-color: transparent;
+  // color: #f8f9fa;
+  font-size: 1.5em;
+  font-family: "swapped-font";
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  height: 70px;
+  width: 90%;
+  padding-left: 10px;
+  margin: 0;
+}
+
+input#typing-input{
+  display: block;
+  background: none;
+  // caret-color: transparent;
+  // color: #f8f9fa;
+  font-size: 1.5em;
+  font-family: "normal-font";
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  height: 70px;
+  width: 90%;
+  padding-left: 10px;
+  margin: 0;
+
+  // &::placeholder{
+  //   color: #1e90ff;
+  // }
+}
