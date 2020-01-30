@@ -1,7 +1,4 @@
 <h2><i class="fas fa-users-cog"></i> <%= @current_user.name %></h2>
-<% if @current_user.last_login %>
-  <p>最終ログイン <%= @current_user.last_login.strftime("%Y.%m.%d %H:%M")%></p>
-<% end %>
 <p class="text-muted">ユーザー名は変更できません。</p>
 <hr>
 <h3>パスワードの変更</h3>

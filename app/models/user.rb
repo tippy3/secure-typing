@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 
+  has_one :font, dependent: :destroy
   has_secure_password
 
   validates :name, {presence: true, uniqueness: true, format: {with: /\A[a-zA-Z0-9]+\z/ }, length: {minimum: 4, maximum: 16} }

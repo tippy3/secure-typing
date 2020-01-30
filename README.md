@@ -9,16 +9,16 @@
 
 は自動生成される。
 
-### users (has_many results)
-* t.string :email
+### users (has_one font, has_many results )
 * t.string :name
 * t.boolean :admin
-* t.integer :level
-* t.integer :experience
-* t.integer :swapfont
 * t.string :password_digest
 
-### sentences (belongs_to games)
+### fonts (belongs_to user)
+* user_id
+* swapfont
+
+### sentences (belongs_to game)
 * game_id
 * sentence
 

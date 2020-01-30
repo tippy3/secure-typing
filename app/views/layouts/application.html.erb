@@ -10,6 +10,16 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="icon" href="<%= asset_pack_path 'media/images/negi.png' %>">
+    <style>
+      @font-face {
+        font-family: 'swapped-font';
+        src: url('/myfont') format('truetype');
+      }
+      .swapped-font{
+        font-size: 1.5em;
+        font-family: 'swapped-font'
+      }
+    </style>
   </head>
 
   <body>
